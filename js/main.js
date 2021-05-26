@@ -134,8 +134,6 @@ $(document).ready(function(){
 
 						setTimeout(() => {
 							document.querySelector('section.quiz').classList.remove('active');
-							document.querySelector('.plate-active').classList.remove('active');
-							document.querySelector('.plate-1').classList.add('active');
 						}, 1000);
 					}, 200);
 					
