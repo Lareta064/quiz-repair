@@ -10,8 +10,54 @@
 		<title>Page</title>
 	</head>
 	<body>
-		<section class="quiz">
+		<header class="header">
+			<div class="container">
+				<div class="header-content">
+					<div class="contact-phone"> <a href="tel:88003025362">8 (800) 302-53-62</a></div>
+					<div class="header-text">
+						<h1>Срочный Ремонт Стиральных Машин </h1>
+						<p>с выездом на Дом</p>
+					</div>
+					<div class="header-button">
+						<p>Ответье на 3 вопроса и узнайте точную стоимость ремонта!<br/>  А также получите <span>скидку 20%!</span> </p><a class="btn" href="#!" id="start-quiz">узнать стоимость</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="benefits">
+			<div class="container">
+				<div class="benefits-block">
+					<div class="benefits-block__item">
+						<div class="benefit-icon"> <i class="fas fa-tools"></i></div>
+						<div class="benefit-text">
+							<p><span>Бесплатный</span> выезд и диагностика</p>
+						</div>
+					</div>
+					<div class="benefits-block__item">
+						<div class="benefit-icon"><i class="fas fa-thumbs-up"></i></div>
+						<div class="benefit-text">
+							<p><span>Гарантия</span> на работы до 1 года</p>
+						</div>
+					</div>
+					<div class="benefits-block__item">
+						<div class="benefit-icon"><i class="fas fa-history"></i></div>
+						<div class="benefit-text">
+							<p><span>Срочный</span> ремонт в течении часа</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer"> 
+			<div class="container"> 
+				<div class="footer-content"> 
+					<p>ИП Власов Олег Николаевич <span class="nowrap">ИНН 309784731600826 782031871202</span></p>
+				</div>
+			</div>
+		</footer>
+		<section class="quiz" id="quiz">
 			<div class="quiz-content">
+				<button class="close-modal">X</button>
 				<!-- =========== plate #1 ===========-->
 				<!-- ======== PLATE-1 =========-->
 				<div class="plate plate-1 plate-active">
@@ -238,7 +284,7 @@
 						</div>
 					</div>
 					<div class="plate-footer"> 
-						<button class="back-btn">Назад</button>
+						<button class="back-btn btn">Назад</button>
 					</div>
 				</div>
 				<!-- ======== PLATE-3 =========			-->
@@ -273,26 +319,27 @@
 						</div>
 					</div>
 					<div class="plate-footer"> 
-						<button class="back-btn">Назад</button>
+						<button class="back-btn btn">Назад</button>
 					</div>
 				</div>
 				<!-- ======== PLATE-FORM =========-->
 				<div class="plate user-data">
 					<div class="plate-header">
 						<div class="plate-header__text">
-							<p>заполните форму!</p>
+							<p>Отлично! Оставьте контакты, что бы узнать стоимость ремонта и получить скидку&nbsp;20%</p>
 						</div>
 					</div>
 					<div class="plate-body">
 						<form class="contact-form">
+							<div class="form-img"><img src="img/sale.png" width="100" alt="sale"/></div>
 							<div class="contact-form__item">
-								<input type="text" name="user_Name" placeholder="Ваше имя"/>
+								<input type="text" name="user_Name" placeholder="Ваше имя" required="required"/>
 							</div>
 							<div class="contact-form__item">
-								<input class="phone" type="text" name="user_Phone" placeholder="Ваш телефон"/>
+								<input class="phone" type="text" name="user_Phone" placeholder="Ваш телефон" required="required"/>
 							</div>
 							<div class="contact-form__item select-wrapper">
-								<input type="text" name="user_City" placeholder="Ваш город"/>
+								<input type="text" name="user_City" placeholder="Ваш город" readonly="readonly" required="required"/>
 								<div class="select-list">
 									<ul> 
 										<li>Москва</li>
@@ -310,11 +357,12 @@
 				</div>
 				<!-- ======== PLATE-SUCCESS =========-->
 				<div class="plate plate-success">
-					<h1>Спасибо, Ваши ответы приняты!</h1>
+					<h1>Спасибо, мы свяжемся с Вами в ближайщее время!</h1>
 				</div>
 			</div>
 		</section>
 		<script src="libs/jquery/jquery-3.0.0.min.js"></script>
+		<script src="https://kit.fontawesome.com/9b72afda33.js"></script>
 		<script src="libs/jquery.maskedinput.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>

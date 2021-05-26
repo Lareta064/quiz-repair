@@ -31,9 +31,25 @@ $(document).ready(function(){
 			e.stopPropagation();
 			cityInput.querySelector('input').value = e.target.textContent;
 			this.style.height = 0;
-		}		
-	})
+		}
+	});
 
+	/*START QUIZ*/
+	const startQuiz = document.querySelector('#start-quiz');
+	const quizBlock = document.querySelector('#quiz');
+	startQuiz.addEventListener('click', function(){
+		quizBlock.classList.add('active');
+	});
+	if(quizBlock){
+
+		const quizcloseBtn = this.querySelector('.close-modal');
+
+		quizBlock.addEventListener('click', function(e){
+			if(!e.target.closest('.plate') ){
+				this.classList.remove('active');
+			}
+		});
+	}
 
 	// ---------------------------------------------------------------------------Работа с формой
 	// Список карточек вопросов
@@ -96,8 +112,8 @@ $(document).ready(function(){
 				const city = plates[i].querySelector('input[name=user_City]');
 
 				// Если все поля заполнены
-				if(name.value.trim().length !== 0 && 
-					phone.value.trim().length !== 0 && 
+				if(name.value.trim().length !== 0 &&
+					phone.value.trim().length !== 0 &&
 					city.value.trim().length !== 0)
 					{
 
@@ -129,8 +145,8 @@ $(document).ready(function(){
 	function sendForm(atrArray){
 		// Создаем запрос
 		const request = new XMLHttpRequest();
-		// const url = `php/send.php?`;
-		const url = `https://httpbin.org/post`;
+		const url = 'php/send.php?';
+		// const url = `https://httpbin.org/post`;
 		request.open('POST', url, true);
 
 		// Устанавливаем заголовок
@@ -144,7 +160,7 @@ $(document).ready(function(){
 			body += `${elem}=${sessionStorage.getItem(elem)}&`;
 			sessionStorage.removeItem(elem);
 		};
-		
+
 		// Отправляем запрос
 		request.send(body);
 	};
