@@ -72,12 +72,15 @@ $(document).ready(function(){
 
 				// Установить "выбор" на нажатой карточке
 				event.target.closest('label').classList.add('active');
+				
+				setTimeout(() => {
+					// "Спрятать" эту карточку
+					this.classList.remove('plate-active');
 
-				// "Спрятать" эту карточку
-				this.classList.remove('plate-active');
-
-				// "Проявить" следующую
-				plates[i+1].classList.add('plate-active');
+					// "Проявить" следующую
+					plates[i+1].classList.add('plate-active');
+				}, 200);
+				
 			}
 		});
 
@@ -122,12 +125,20 @@ $(document).ready(function(){
 					sessionStorage.setItem('phone', phone.value.trim());
 					sessionStorage.setItem('city', city.value.trim());
 
-					// "Спрятать" эту карточку
-					plates[i].classList.remove('plate-active');
+					setTimeout(() => {
+						// "Спрятать" эту карточку
+						plates[i].classList.remove('plate-active');
 
-					// "Проявить" следующую
-					plates[i+1].classList.add('plate-active');
+						// "Проявить" следующую
+						plates[i+1].classList.add('plate-active');
 
+						setTimeout(() => {
+							document.querySelector('section.quiz').classList.remove('active');
+							document.querySelector('.plate-active').classList.remove('active');
+							document.querySelector('.plate-1').classList.add('active');
+						}, 1000);
+					}, 200);
+					
 					// Создаем и отправляем запрос
 					sendForm(['brand','problem','type','name','phone','city']);
 				}
